@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/todos";
+const API_URL = "https://task-management-app-kqkz.onrender.com/api/todos";
 
 const getConfig = (token) => ({
   headers: {
