@@ -18,7 +18,7 @@ const app = express();
 app.use(cors({
   origin:[
     "http://localhost:5173",
-    "https://task-management-app-eight-fawn.vercel.app/"
+    "https://task-management-app-eight-fawn.vercel.app"
   ],
   credentials: true,
 }));
