@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import Navbar from "../components/Navbar";
 import { loginUser } from "../services/authService";
 import { useAuth } from "../context/AuthContext";
 
@@ -43,16 +43,21 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-      {" "}
+  <>
+    <Navbar />
+
+    <div className="min-h-[calc(100vh-72px)] flex items-center justify-center bg-gray-100 px-4">
       <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
-        {" "}
-        <h1 className="text-3xl font-bold text-center mb-6">Login </h1>
+        <h1 className="text-3xl font-bold text-center mb-6">
+          Login
+        </h1>
+
         {error && (
           <div className="bg-red-100 text-red-700 p-3 rounded mb-4">
             {error}
           </div>
         )}
+
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <input
@@ -86,15 +91,19 @@ const Login = () => {
             {loading ? "Logging in..." : "Login"}
           </button>
         </form>
+
         <p className="text-center mt-4">
           Don't have an account?{" "}
-          <Link to="/register" className="text-blue-600 hover:underline">
+          <Link
+            to="/register"
+            className="text-blue-600 hover:underline"
+          >
             Register
           </Link>
         </p>
       </div>
     </div>
-  );
-};
+  </>
+);
 
 export default Login;
