@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import Navbar from "../components/Navbar";
 import { registerUser } from "../services/authService";
 import { useAuth } from "../context/AuthContext";
 
@@ -53,16 +53,21 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-      {" "}
+  <>
+    <Navbar />
+
+    <div className="min-h-[calc(100vh-72px)] flex items-center justify-center bg-gray-100 px-4">
       <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
-        {" "}
-        <h1 className="text-3xl font-bold text-center mb-6">Register </h1>
+        <h1 className="text-3xl font-bold text-center mb-6">
+          Register
+        </h1>
+
         {error && (
           <div className="bg-red-100 text-red-700 p-3 rounded mb-4">
             {error}
           </div>
         )}
+
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <input
@@ -120,15 +125,19 @@ const Register = () => {
             {loading ? "Creating Account..." : "Register"}
           </button>
         </form>
+
         <p className="text-center mt-4">
           Already have an account?{" "}
-          <Link to="/login" className="text-blue-600 hover:underline">
+          <Link
+            to="/login"
+            className="text-blue-600 hover:underline"
+          >
             Login
           </Link>
         </p>
       </div>
     </div>
-  );
-};
+  </>
+);
 
 export default Register;
