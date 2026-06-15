@@ -87,8 +87,8 @@ todo-app/
 ### Clone Repository
 
 ```bash
-git clone <repository-url>
-cd todo-app
+git clone https://github.com/shreekarsharma/task-management-app.git
+cd task-management-app
 ```
 
 ---
@@ -96,7 +96,7 @@ cd todo-app
 ## Backend Setup
 
 ```bash
-cd server
+cd todo-backend
 npm install
 ```
 
@@ -127,7 +127,7 @@ http://localhost:5000
 ## Frontend Setup
 
 ```bash
-cd client
+cd todo-frontend
 npm install
 ```
 
@@ -255,4 +255,4 @@ https://mongodb.com/atlas
 
 ## Author
 
-Developed using the MERN Stack.
+Shreekar Sharma
